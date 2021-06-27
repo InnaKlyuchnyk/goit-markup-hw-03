@@ -10,6 +10,7 @@
     --logo-black-color: #000000;
     --light-background-buttons-color: #F5F4FA;
     --footer-mail-color: rgba(255, 255, 255, 0.6);
+    --border-color: #ECECEC;
 }
 h1, h2, h3, h4, h5, h6, p {
     margin-top: 0;
@@ -22,6 +23,8 @@ ul, ol {
 }
 img {
     display: block;
+    max-width: 100%;
+    height: auto;
 }
 .list {
 list-style: none;
@@ -64,11 +67,17 @@ margin-bottom: 50px;
     
     color: var(--logo-black-color);
 }
+.logo:hover,
+.logo:focus{
+    color: var(--accent-color);
+}
 
 
 /* ====================Шапка===================== */
 .header {
-    border-bottom: 1px solid #ECECEC;
+    background-color: var(--main-light-color);
+    border-bottom: 1px solid var(--border-color);
+    height: 80px;
 }
 
 .header-container {
@@ -132,6 +141,12 @@ color: var(--secondary-color);
 .hero {
 background:var(--background-color);
 text-align: center;
+padding-top: 200px;
+padding-bottom: 200px;
+}
+
+.hero .container{
+    width: 696px;
 }
 
 .main-title {
@@ -154,17 +169,28 @@ line-height: 1.87;
 letter-spacing: 0.06em;
 padding: 10px 32px;
 cursor: pointer;
+border: none;
 
 background: var(--accent-color);
 color: var(--main-light-color);
 }
 
 /*=======================Преимущества================================ */
+.visually-hidden{
+    position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+.section-advantages{
+    padding-bottom: 0;
+}
 .advantages {
     display: flex;
 }
 .advantages-list{
-    width: 270px;
+    flex-basis: calc((100% - 90px) / 4);
 }
 .advantages-list:not(:last-child){
     margin-right: 30px;
@@ -183,6 +209,9 @@ color: var(--secondary-color);
 }
 
 /* ================Чем занимается студия============== */
+.section-what-we-do{
+    padding-bottom: 0;
+}
 .what-we-do-list{
     display: flex;
     margin-left: -30px;
@@ -211,16 +240,17 @@ color: var(--secondary-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 }
+.team-img-description{
+    padding: 30px 59px;
+}
 .team-title {
 font-weight: 500;
 font-size: 16px;
-margin-top: 30px;
 }
 .team-position {
 color:var(--secondary-color);
 font-size: 16px;
 margin-top: 10px;
-margin-bottom: 30px;
 }
 
 /* ====================Портфолио кнопки=========== */
@@ -228,7 +258,7 @@ margin-bottom: 30px;
 .portfolio-button-list{
     display: flex;
     justify-content: center;
-    margin-bottom: 34px;
+    margin-bottom: 50px;
 }
 .portf-btm-list-item:not(:last-child){
     margin-right: 8px;
@@ -242,6 +272,7 @@ text-align: center;
 letter-spacing: 0.03em;
 border: 1px solid transparent;
 border-radius: 4px;
+padding: 6px 22px;
 
 color:var(--main-color);
 background: var(--light-background-buttons-color);
@@ -257,9 +288,10 @@ background: var(--light-background-buttons-color);
 .portf-img-list{
     display: flex;
     flex-wrap: wrap;
-     margin-top: -30px;
+    margin-top: -30px;
     margin-left: -30px;
 }
+
 .portf-img-list-item{
     flex-basis: calc((100% - 270px) / 9);
     margin-top: 30px;
@@ -268,8 +300,8 @@ background: var(--light-background-buttons-color);
     border: 1px solid #EEEEEE;
     
 }
-.portf-img{
-    padding-bottom: 20px;
+.portf-img-description{
+    padding: 20px 24px;
 }
 .portfolio-img-title {
 font-weight: 700;
@@ -277,9 +309,7 @@ font-size: 18px;
 line-height: 2;
 letter-spacing: 0.06em;
 width: 322px;
-margin-right: 24px;
-margin-left: 24px;
-padding-bottom: 4px;
+margin-bottom: 4px;
 
 color:var(--main-color);
 
@@ -288,21 +318,19 @@ color:var(--main-color);
 font-size: 16px;
 line-height: 1.87;
 width: 322px;
-margin-right: 24px;
-margin-left: 24px;
-padding-bottom: 20px;
 
 color:var(--secondary-color);
 }
 /* ===================Подвал===================== */
 .footer {
 background: var(--background-color);
+padding-top: 60px;
+padding-bottom: 60px;
 }
 .logo-white {
     color: var(--main-light-color);
 }
 .logo-footer{
-    margin-top: 60px;
     margin-bottom: 20px;
 }
 
@@ -312,7 +340,7 @@ font-style: normal;
 line-height: 1.71;
 }
 .address-list:not(:last-child){
-    margin-bottom: 10px;
+    margin-bottom: 9px;
 }
 .address-link {
 color: var(--main-light-color);
